@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.cluster import AgglomerativeClustering
+from sklearn.cluster import AgglomerativeClusteringa
 
 # Step 1: Load image (use your own downloaded image path)
 image = cv2.imread("/run/media/rohith/Mine/Projects/DL_external/PDA_Internal/Abstract - Nature.jpg")
