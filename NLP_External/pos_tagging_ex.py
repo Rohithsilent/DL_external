@@ -13,4 +13,4 @@ pos_tags = pos_tag(words)
 # Print result
 print("POS Tags:")
 for word, tag in pos_tags:
-    print(word, "->", tag)
+    print(word, "->", tag) 
