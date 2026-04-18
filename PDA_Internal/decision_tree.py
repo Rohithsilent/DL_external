@@ -1,28 +1,25 @@
 import numpy as np
-import matplotlib.pyplot as plt
+import pandas as pd
 from sklearn.tree import DecisionTreeClassifier, plot_tree
+import matplotlib.pyplot as plt
 
-# Step 1: Data
-X = np.array([1, 2, 3, 4, 5, 6]).reshape(-1, 1)
-y = np.array([0, 0, 0, 1, 1, 1])  # 0 = Fail, 1 = Pass
+hours = np.array([0,1,2,3,4,5]).reshape(-1,1)
+results = np.array([0,0,0,1,1,1])
 
-# Step 2: Train model
-model = DecisionTreeClassifier(max_depth=2)
-model.fit(X, y)
+model = DecisionTreeClassifier(max_depth=1)
+model.fit(hours,results)
 
-# Step 3: Print tree as text
 from sklearn.tree import export_text
-tree_rules = export_text(model, feature_names=["Hours"])
+
+tree_rules = export_text(model, feature_names=["hours"])
 print(tree_rules)
 
-# Step 4: Visualize tree
-plt.figure(figsize=(10, 6))
+plt.figure(figsize = (10,6))
 plot_tree(
     model,
-    feature_names=["Hours"],
-    class_names=["Fail", "Pass"],
+    feature_names=["hours"],
+    class_names = ["fail","pass"],
     filled=True
 )
 
-plt.title("Decision Tree Structure")
 plt.show()
